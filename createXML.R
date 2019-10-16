@@ -5,7 +5,7 @@ library(XML)
 doc = newXMLDoc()
 
 #Cria uma tag no topo
-top = newXMLNode("batata")
+top = newXMLNode("batata", doc = doc)
 
 #Cria uma subtag de top com atributos 1 e abc
 newXMLNode("potato", attrs = c(x = 1, y = 'abc'), parent = top)
@@ -28,7 +28,9 @@ kids = lapply(c(" Asterix "," Doce ", " Baraka "),
                 newXMLNode("Batatinha", x))
 addChildren(o, kids)
 
-#Imprime nosso XML gerado
-cat(saveXML(top))
+#Cria nosso XML gerado
+cat(saveXML(doc, file = "first.xml"))
 
-#Falta salvar a árvore XML num arquivo.xml de fato.
+#Caso fosse de interesse apenas imprimir o XML sem gerar o arquivo
+#cat("\n")
+#cat(saveXML(doc))

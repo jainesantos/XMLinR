@@ -1,7 +1,7 @@
 #Chamando a biblioteca XML
 library(XML)
 
-#Cria um novo domundo XML
+#Cria um novo documento XML
 doc = newXMLDoc()
 
 #Cria uma tag no topo
